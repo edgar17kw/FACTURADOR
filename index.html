@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul  4 01:17:55 2025
+@author: Edgar Daniel González Soto
 
-@author: Edgar Daniel Gonzalez Soto
-"""
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,11 +11,6 @@ Created on Fri Jul  4 01:17:55 2025
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <style>
-        /*
-        *********************************************************
-        * ESTILOS CSS - NO TOCAR SI NO SABES       *
-        *********************************************************
-        */
         * {
             margin: 0;
             padding: 0;
@@ -401,7 +392,7 @@ Created on Fri Jul  4 01:17:55 2025
                     <img id="logoPreviewInvoice" class="logo-preview" style="display: none;">
                 </div>
                 
-                <div class="section-title">Información del Cliente</div>
+                <div class="section-title">Informaci√≥n del Cliente</div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="clientNameInvoice">Nombre del Cliente</label>
@@ -410,21 +401,21 @@ Created on Fri Jul  4 01:17:55 2025
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="clientAddressInvoice">Dirección</label>
-                        <textarea id="clientAddressInvoice" rows="3" placeholder="Dirección completa del cliente"></textarea>
+                        <label for="clientAddressInvoice">Direcci√≥n</label>
+                        <textarea id="clientAddressInvoice" rows="3" placeholder="Direcci√≥n completa del cliente"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="clientPhoneInvoice">Teléfono</label>
-                        <input type="tel" id="clientPhoneInvoice" placeholder="(000) 000-0000" maxlength="14">
+                        <label for="clientPhoneInvoice">Tel√©fono</label>
+                        <input type="tel" id="clientPhoneInvoice" placeholder="(000) 000-0000">
                     </div>
                 </div>
                 
                 <div class="section-title">Fechas</div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="issueDateInvoice">Fecha de Emisión</label>
+                        <label for="issueDateInvoice">Fecha de Emisi√≥n</label>
                         <input type="date" id="issueDateInvoice">
                     </div>
                     <div class="form-group">
@@ -436,17 +427,27 @@ Created on Fri Jul  4 01:17:55 2025
                 <div class="section-title">Servicios Prestados</div>
                 <div class="services-section" id="servicesContainerInvoice">
                     <div class="service-item">
-                        <input type="text" class="service-description" placeholder="Descripción del servicio">
+                        <input type="text" class="service-description" placeholder="Descripci√≥n del servicio">
                         <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0">
                         <button class="btn btn-danger" onclick="removeService(this, 'invoice')">Eliminar</button>
                     </div>
                 </div>
-                <button class="btn btn-success" onclick="addService('invoice')">Añadir Servicio</button>
+                <button class="btn btn-success" onclick="addService('invoice')">A√±adir Servicio</button>
                 
                 <div class="total-section">
                     <div class="total-amount">
                         Total: $<span id="totalAmountInvoice">0.00</span>
                     </div>
+                </div>
+                
+                <div class="section-title">Notas y T√©rminos</div>
+                <div class="form-group">
+                    <label for="notesInvoice">Notas</label>
+                    <textarea id="notesInvoice" rows="3">Gracias por confiar en nuestros servicios. Para cualquier duda, no dude en comunicarse con nosotros.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="termsInvoice">T√©rminos y Condiciones</label>
+                    <textarea id="termsInvoice" rows="3">El pago debe realizarse en su totalidad antes de la fecha de vencimiento. Pasado este periodo, se aplicar√° un cargo por demora del 5% mensual sobre el saldo pendiente. Nos reservamos el derecho de suspender servicios por falta de pago. Todos los materiales y servicios est√°n garantizados por 30 d√≠as.</textarea>
                 </div>
                 
                 <div class="actions">
@@ -459,7 +460,7 @@ Created on Fri Jul  4 01:17:55 2025
         
         <div id="quoteTab" class="tab-content">
             <div class="form-section">
-                <div class="section-title">Logo de la Empresa</div>
+                <div class="section-title">Logo del negocio</div>
                 <div class="logo-upload">
                     <input type="file" id="logoInputQuote" accept="image/*" style="display: none;">
                     <button class="btn btn-primary" onclick="document.getElementById('logoInputQuote').click()">
@@ -469,7 +470,7 @@ Created on Fri Jul  4 01:17:55 2025
                     <img id="logoPreviewQuote" class="logo-preview" style="display: none;">
                 </div>
                 
-                <div class="section-title">Información del Cliente</div>
+                <div class="section-title">Informaci√≥n del Cliente</div>
                 <div class="form-row">
                     <div class="form-group">
                         <label for="clientNameQuote">Nombre del Cliente</label>
@@ -478,25 +479,25 @@ Created on Fri Jul  4 01:17:55 2025
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="clientAddressQuote">Dirección</label>
-                        <textarea id="clientAddressQuote" rows="3" placeholder="Dirección completa del cliente"></textarea>
+                        <label for="clientAddressQuote">Direcci√≥n</label>
+                        <textarea id="clientAddressQuote" rows="3" placeholder="Direcci√≥n completa del cliente"></textarea>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="clientPhoneQuote">Teléfono</label>
-                        <input type="tel" id="clientPhoneQuote" placeholder="(000) 000-0000" maxlength="14">
+                        <label for="clientPhoneQuote">Tel√©fono</label>
+                        <input type="tel" id="clientPhoneQuote" placeholder="(000) 000-0000">
                     </div>
                 </div>
                 
                 <div class="section-title">Fechas</div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="issueDateQuote">Fecha de Emisión</label>
+                        <label for="issueDateQuote">Fecha de Emisi√≥n</label>
                         <input type="date" id="issueDateQuote">
                     </div>
                     <div class="form-group">
-                        <label for="validityDays">Días de Validez</label>
+                        <label for="validityDays">D√≠as de Validez</label>
                         <input type="number" id="validityDays" value="10" min="1" placeholder="10">
                     </div>
                 </div>
@@ -504,12 +505,12 @@ Created on Fri Jul  4 01:17:55 2025
                 <div class="section-title">Servicios Cotizados</div>
                 <div class="services-section" id="servicesContainerQuote">
                     <div class="service-item">
-                        <input type="text" class="service-description" placeholder="Descripción del servicio">
+                        <input type="text" class="service-description" placeholder="Descripci√≥n del servicio">
                         <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0">
                         <button class="btn btn-danger" onclick="removeService(this, 'quote')">Eliminar</button>
                     </div>
                 </div>
-                <button class="btn btn-success" onclick="addService('quote')">Añadir Servicio</button>
+                <button class="btn btn-success" onclick="addService('quote')">A√±adir Servicio</button>
                 
                 <div class="total-section">
                     <div class="total-amount">
@@ -517,10 +518,20 @@ Created on Fri Jul  4 01:17:55 2025
                     </div>
                 </div>
                 
+                <div class="section-title">Notas y T√©rminos</div>
+                <div class="form-group">
+                    <label for="notesQuote">Notas</label>
+                    <textarea id="notesQuote" rows="3">Esta cotizaci√≥n es v√°lida para los productos y servicios descritos. Los precios est√°n sujetos a cambios sin previo aviso si no se confirma dentro del periodo de validez.</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="termsQuote">T√©rminos y Condiciones</label>
+                    <textarea id="termsQuote" rows="3">La cotizaci√≥n es v√°lida por 10 d√≠as a partir de la fecha de emisi√≥n. La disponibilidad de materiales y precios puede variar despu√©s de este periodo. Se requiere un deposito inicial del 50% del total. La aceptaci√≥n de esta cotizaci√≥n implica la conformidad con los t√©rminos establecidos.</textarea>
+                </div>
+                
                 <div class="actions">
-                    <button class="btn btn-warning" onclick="generateDocument('quote')">Generar Cotización</button>
+                    <button class="btn btn-warning" onclick="generateDocument('quote')">Generar Cotizaci√≥n</button>
                     <button class="btn btn-success" onclick="downloadPDF('quote')" id="downloadBtnQuote" style="display: none;">Guardar como PDF</button>
-                    <button class="btn btn-warning" onclick="newDocument('quote')" id="newQuoteBtn" style="display: none;">Nueva Cotización</button>
+                    <button class="btn btn-warning" onclick="newDocument('quote')" id="newQuoteBtn" style="display: none;">Nueva Cotizaci√≥n</button>
                     <button class="btn btn-primary" onclick="convertToInvoice()" id="convertBtnQuote" style="display: none;">Convertir a Factura</button>
                 </div>
             </div>
@@ -550,21 +561,21 @@ Created on Fri Jul  4 01:17:55 2025
                         <div id="displayClientPhone"></div>
                     </div>
                     <div class="document-details">
-                        <div><strong>Fecha de Emisión:</strong> <span id="displayIssueDate"></span></div>
+                        <div><strong>Fecha de Emisi√≥n:</strong> <span id="displayIssueDate"></span></div>
                         <div id="dueDateRow"><strong>Fecha de Vencimiento:</strong> <span id="displayDueDate"></span></div>
-                        <div id="validityRow" style="display: none;"><strong>Válida hasta:</strong> <span id="displayValidityDate"></span></div>
+                        <div id="validityRow" style="display: none;"><strong>V√°lida hasta:</strong> <span id="displayValidityDate"></span></div>
                         <div><strong id="documentNumberLabel">Factura #:</strong> <span id="documentNumber"></span></div>
                     </div>
                 </div>
                 
                 <div id="quoteValidityNotice" class="quote-validity" style="display: none;">
-                    <strong>Esta cotización es válida por <span id="validityDaysDisplay"></span> días a partir de la fecha de emisión.</strong>
+                    <strong>Esta cotizaci√≥n es v√°lida por <span id="validityDaysDisplay"></span> d√≠as a partir de la fecha de emisi√≥n.</strong>
                 </div>
                 
                 <table class="services-table">
                     <thead>
                         <tr>
-                            <th>Descripción</th>
+                            <th>Descripci√≥n</th>
                             <th>Precio</th>
                         </tr>
                     </thead>
@@ -577,30 +588,24 @@ Created on Fri Jul  4 01:17:55 2025
                         <strong>Total: $<span id="displayTotal">0.00</span></strong>
                     </div>
                 </div>
+                
+                <div id="displayNotes" style="margin-top: 30px;"></div>
+                <div id="displayTerms" style="margin-top: 20px;"></div>
             </div>
         </div>
     </div>
     
     <script>
-        /*
-        *********************************************************
-        * JAVASCRIPT - NO TOCAR SI NO SABES       *
-        *********************************************************
-        */
-
-        // URL de tu Google Apps Script Web App
-        // **** ¡IMPORTANTE! ACTUALIZA ESTA URL CON LA TUYA DESPUÉS DE DESPLEGAR EL SCRIPT DE APPS SCRIPT ****
-        const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyjlAExE4jkDPsEU-CtkIRAw_s4ml2tERy63T9Se1DA-ouXPM_L4ox9v0lJORDs8JH9/exec';
-
         let logoDataUrl = { invoice: null, quote: null };
         let currentDocumentType = null;
         
-        // --- FUNCIONES PARA GENERAR NÚMERO DE DOCUMENTO ---
+        // --- NUEVAS FUNCIONES PARA GENERAR N√öMERO DE DOCUMENTO ---
+        // Almacenar el √∫ltimo contador en localStorage
         const COUNTER_KEY = 'dailyDocumentCounter';
 
         function getTodayKey() {
             const today = new Date();
-            // Formato YYYY-MM-DD
+            // Formato YYYY-MM-DD para la clave
             return `${today.getFullYear()}-${(today.getMonth() + 1).toString().padStart(2, '0')}-${today.getDate().toString().padStart(2, '0')}`;
         }
 
@@ -608,22 +613,28 @@ Created on Fri Jul  4 01:17:55 2025
             const todayKey = getTodayKey();
             let counters = JSON.parse(localStorage.getItem(COUNTER_KEY) || '{}');
 
-            // Si es un nuevo día o el contador excede 99 (ej: 0-98, el 99 sería el #100 del día), reinicia o inicializa para hoy
-            if (counters[todayKey] === undefined || counters[todayKey] >= 99) {
-                // Borra contadores de días anteriores para mantener el localStorage limpio, opcional
-                counters = {}; 
-                counters[todayKey] = 0; // Se incrementará a 1 en la siguiente línea
+            if (counters[todayKey] === undefined) {
+                // Si es un nuevo d√≠a o nunca se ha usado hoy, inicializar a 0
+                counters = {}; // Limpiar contadores de d√≠as anteriores si no quieres guardarlos
+                counters[todayKey] = 0;
             }
 
+            // Incrementar el contador para el d√≠a actual
             counters[todayKey]++;
             
+            // Validar l√≠mite de 99
+            if (counters[todayKey] > 99) {
+                console.warn(`Advertencia: Se super√≥ el l√≠mite de 99 documentos para el d√≠a ${todayKey}. El contador se ha reiniciado a 1 para el pr√≥ximo.`);
+                counters[todayKey] = 1; // Reiniciar para el pr√≥ximo documento si se supera
+            }
+
             localStorage.setItem(COUNTER_KEY, JSON.stringify(counters));
             return counters[todayKey];
         }
 
         function getFormattedDatePart() {
             const now = new Date();
-            const month = now.getMonth() + 1; // getMonth() es base 0
+            const month = now.getMonth() + 1; // getMonth() es 0-indexado
             const day = now.getDate();
 
             let codeMonth;
@@ -637,7 +648,7 @@ Created on Fri Jul  4 01:17:55 2025
                 codeMonth = 'C';
             }
             
-            const codeDay = String(day).padStart(2, '0'); // Asegura dos dígitos para el día
+            const codeDay = String(day).padStart(2, '0');
 
             return { codeMonth, codeDay };
         }
@@ -645,59 +656,38 @@ Created on Fri Jul  4 01:17:55 2025
         function generateDocumentNumber(type) {
             const { codeMonth, codeDay } = getFormattedDatePart();
             const counter = getDailyCounter();
-            const codeCounter = String(counter).padStart(2, '0'); // Asegura dos dígitos para el contador
+            const codeCounter = String(counter).padStart(2, '0');
 
-            // Formato: MMDDXX (ejemplo: 70401 para Julio 4, documento #1)
             const numeroFinal = `${codeMonth}${codeDay}${codeCounter}`;
             return numeroFinal;
         }
-        // --- FIN DE FUNCIONES PARA GENERAR NÚMERO DE DOCUMENTO ---
+        // --- FIN DE NUEVAS FUNCIONES ---
 
-        // Función para formatear el número de teléfono
-        function formatPhoneNumber(input) {
-            let value = input.value.replace(/\D/g, ''); // Elimina cualquier cosa que no sea un dígito
-
-            if (value.length > 10) { // Limita a 10 dígitos para el formato (000) 000-0000
-                value = value.substring(0, 10);
-            }
-
-            let formattedValue = '';
-            if (value.length > 0) {
-                formattedValue = '(' + value.substring(0, 3);
-            }
-            if (value.length >= 4) {
-                formattedValue += ') ' + value.substring(3, 6);
-            }
-            if (value.length >= 7) {
-                formattedValue += '-' + value.substring(6, 10);
-            }
-            input.value = formattedValue;
-        }
-        
         // Configurar fechas actuales por defecto
         function initializeDates() {
             const today = new Date();
-            // Establecer fecha de emisión a hoy
             document.getElementById('issueDateInvoice').valueAsDate = today;
             document.getElementById('issueDateQuote').valueAsDate = today;
             
-            // Establecer fecha de vencimiento (para facturas) a 30 días desde hoy
             const invoiceDueDate = new Date();
             invoiceDueDate.setDate(invoiceDueDate.getDate() + 30);
             document.getElementById('dueDateInvoice').valueAsDate = invoiceDueDate;
         }
         
-        // Cambiar entre pestañas de Facturas y Cotizaciones
+        // Cambiar entre pesta√±as
         function switchTab(type) {
+            // Actualizar pesta√±as
             document.querySelectorAll('.nav-tab').forEach(tab => tab.classList.remove('active'));
             document.querySelector(`[onclick="switchTab('${type}')"]`).classList.add('active');
             
+            // Mostrar contenido correspondiente
             document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
             document.getElementById(type + 'Tab').classList.add('active');
             
-            // Ocultar previsualización y botones de acción al cambiar de pestaña
+            // Ocultar preview si est√° visible
             document.getElementById('documentPreview').style.display = 'none';
 
+            // Reset buttons visibility
             document.getElementById('downloadBtnInvoice').style.display = 'none';
             document.getElementById('newInvoiceBtn').style.display = 'none';
             document.getElementById('downloadBtnQuote').style.display = 'none';
@@ -721,63 +711,62 @@ Created on Fri Jul  4 01:17:55 2025
             });
         }
         
-        // Función para añadir un nuevo campo de servicio
+        // Funci√≥n para a√±adir servicio
         function addService(type) {
             const container = document.getElementById(`servicesContainer${type.charAt(0).toUpperCase() + type.slice(1)}`);
             const serviceItem = document.createElement('div');
             serviceItem.className = 'service-item';
             serviceItem.innerHTML = `
-                <input type="text" class="service-description" placeholder="Descripción del servicio">
+                <input type="text" class="service-description" placeholder="Descripci√≥n del servicio">
                 <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0">
                 <button class="btn btn-danger" onclick="removeService(this, '${type}')">Eliminar</button>
             `;
             container.appendChild(serviceItem);
             
-            // Añadir listener para recalcular el total al cambiar este nuevo precio
+            // A√±adir event listener para el c√°lculo autom√°tico
             const priceInput = serviceItem.querySelector('.service-price');
             priceInput.addEventListener('input', () => calculateTotal(type));
-            calculateTotal(type); // Recalcular total inmediatamente
+            calculateTotal(type); // Recalcular al a√±adir un nuevo servicio
         }
         
-        // Función para eliminar un campo de servicio
+        // Funci√≥n para eliminar servicio
         function removeService(button, type) {
             const container = document.getElementById(`servicesContainer${type.charAt(0).toUpperCase() + type.slice(1)}`);
-            if (container.children.length > 1) { // Asegura que siempre haya al menos un campo de servicio
+            if (container.children.length > 1) { // Asegura que al menos un servicio quede
                 button.parentElement.remove();
-                calculateTotal(type); // Recalcular total después de eliminar
+                calculateTotal(type);
             }
         }
         
-        // Calcular el total de los servicios automáticamente
+        // Calcular total autom√°ticamente
         function calculateTotal(type) {
             const priceInputs = document.querySelectorAll(`#servicesContainer${type.charAt(0).toUpperCase() + type.slice(1)} .service-price`);
             let total = 0;
             
             priceInputs.forEach(input => {
-                const value = parseFloat(input.value) || 0; // Asegura que sea un número
+                const value = parseFloat(input.value) || 0;
                 total += value;
             });
             
             document.getElementById(`totalAmount${type.charAt(0).toUpperCase() + type.slice(1)}`).textContent = total.toFixed(2);
         }
         
-        // Función principal para generar el documento y enviar a Google Sheets
-        async function generateDocument(type) {
+        // Funci√≥n para generar el documento
+        function generateDocument(type) {
             currentDocumentType = type;
             const typeCapitalized = type.charAt(0).toUpperCase() + type.slice(1);
             
-            // Validar que el nombre del cliente no esté vacío
+            // Validar campos requeridos
             const clientName = document.getElementById(`clientName${typeCapitalized}`).value.trim();
             if (!clientName) {
                 alert('Por favor, ingrese el nombre del cliente.');
                 return;
             }
             
-            // Generar número de documento único
-            const documentNumber = generateDocumentNumber(type);
-            document.getElementById('documentNumber').textContent = documentNumber;
+            // Generar n√∫mero de documento usando la nueva l√≥gica
+            document.getElementById('documentNumber').textContent = generateDocumentNumber(type);
             
-            // Configuración específica para Factura o Cotización
+            // Configurar t√≠tulos seg√∫n el tipo
             if (type === 'invoice') {
                 document.getElementById('documentTitle').textContent = 'FACTURA';
                 document.getElementById('clientInfoTitle').textContent = 'Facturar a:';
@@ -786,22 +775,23 @@ Created on Fri Jul  4 01:17:55 2025
                 document.getElementById('validityRow').style.display = 'none';
                 document.getElementById('quoteValidityNotice').style.display = 'none';
             } else { // type === 'quote'
-                document.getElementById('documentTitle').textContent = 'COTIZACIÓN';
+                document.getElementById('documentTitle').textContent = 'COTIZACI√ìN';
                 document.getElementById('clientInfoTitle').textContent = 'Cotizar para:';
-                document.getElementById('documentNumberLabel').textContent = 'Cotización #:';
+                document.getElementById('documentNumberLabel').textContent = 'Cotizaci√≥n #:';
                 document.getElementById('dueDateRow').style.display = 'none';
                 document.getElementById('validityRow').style.display = 'block';
                 document.getElementById('quoteValidityNotice').style.display = 'block';
                 
+                // Calcular fecha de validez
                 const issueDate = new Date(document.getElementById(`issueDate${typeCapitalized}`).value);
-                const validityDays = parseInt(document.getElementById('validityDays').value) || 10;
+                const validityDays = parseInt(document.getElementById('validityDays').value) || 10; // Default to 10 for quotes
                 const validityDate = new Date(issueDate);
                 validityDate.setDate(validityDate.getDate() + validityDays);
                 document.getElementById('displayValidityDate').textContent = validityDate.toLocaleDateString('es-ES');
                 document.getElementById('validityDaysDisplay').textContent = validityDays;
             }
             
-            // Mostrar logo o marca de agua (texto)
+            // Mostrar logo si existe
             if (logoDataUrl[type]) {
                 document.getElementById('documentLogo').src = logoDataUrl[type];
                 document.getElementById('documentLogo').style.display = 'block';
@@ -814,28 +804,27 @@ Created on Fri Jul  4 01:17:55 2025
                 document.getElementById('watermarkText').style.display = 'block';
             }
             
-            // Recopilar todos los datos del formulario
-            const clientAddress = document.getElementById(`clientAddress${typeCapitalized}`).value;
-            const clientPhone = document.getElementById(`clientPhone${typeCapitalized}`).value;
-            const issueDate = document.getElementById(`issueDate${typeCapitalized}`).value;
-            const dueDate = document.getElementById(`dueDate${typeCapitalized}`).value; // Solo para factura
-            const totalAmount = parseFloat(document.getElementById(`totalAmount${typeCapitalized}`).textContent);
-
-            // Actualizar la previsualización del documento
+            // Informaci√≥n del cliente
             document.getElementById('displayClientName').textContent = clientName;
-            document.getElementById('displayClientAddress').textContent = clientAddress;
-            document.getElementById('displayClientPhone').textContent = clientPhone; 
-
-            document.getElementById('displayIssueDate').textContent = new Date(issueDate).toLocaleDateString('es-ES');
-            if (type === 'invoice') {
-                document.getElementById('displayDueDate').textContent = new Date(dueDate).toLocaleDateString('es-ES');
-            }
-
-            const servicesTableBody = document.getElementById('servicesTableBody');
-            servicesTableBody.innerHTML = ''; 
-            const serviceItems = document.querySelectorAll(`#servicesContainer${typeCapitalized} .service-item`);
+            document.getElementById('displayClientAddress').textContent = document.getElementById(`clientAddress${typeCapitalized}`).value;
+            document.getElementById('displayClientPhone').textContent = document.getElementById(`clientPhone${typeCapitalized}`).value;
             
-            // Recopilar servicios para la visualización del PDF (no para el Sheet)
+            // Fechas
+            const issueDate = new Date(document.getElementById(`issueDate${typeCapitalized}`).value);
+            document.getElementById('displayIssueDate').textContent = issueDate.toLocaleDateString('es-ES');
+            
+            if (type === 'invoice') {
+                const dueDate = new Date(document.getElementById(`dueDate${typeCapitalized}`).value);
+                document.getElementById('displayDueDate').textContent = dueDate.toLocaleDateString('es-ES');
+            }
+            
+            // Servicios
+            const servicesTableBody = document.getElementById('servicesTableBody');
+            servicesTableBody.innerHTML = ''; // Limpiar servicios anteriores
+            
+            const serviceItems = document.querySelectorAll(`#servicesContainer${typeCapitalized} .service-item`);
+            let totalForDisplay = 0;
+
             serviceItems.forEach(item => {
                 const description = item.querySelector('.service-description').value;
                 const price = parseFloat(item.querySelector('.service-price').value) || 0;
@@ -843,154 +832,104 @@ Created on Fri Jul  4 01:17:55 2025
                 const row = servicesTableBody.insertRow();
                 const descCell = row.insertCell(0);
                 const priceCell = row.insertCell(1);
+                
                 descCell.textContent = description;
                 priceCell.textContent = price.toFixed(2);
-                priceCell.className = 'price';
+                priceCell.classList.add('price'); // A√±adir clase para estilo de alineaci√≥n
+                totalForDisplay += price;
             });
 
-            document.getElementById('displayTotal').textContent = totalAmount.toFixed(2);
-
-            // Mostrar la previsualización y los botones de acción
+            document.getElementById('displayTotal').textContent = totalForDisplay.toFixed(2);
+            
+            // Notas y T√©rminos
+            document.getElementById('displayNotes').innerHTML = `<strong>Notas:</strong><br>${document.getElementById(`notes${typeCapitalized}`).value.replace(/\n/g, '<br>')}`;
+            document.getElementById('displayTerms').innerHTML = `<strong>T√©rminos y Condiciones:</strong><br>${document.getElementById(`terms${typeCapitalized}`).value.replace(/\n/g, '<br>')}`;
+            
+            // Mostrar la vista previa y los botones de acci√≥n
             document.getElementById('documentPreview').style.display = 'block';
-            if (type === 'invoice') {
-                document.getElementById('downloadBtnInvoice').style.display = 'inline-block';
-                document.getElementById('newInvoiceBtn').style.display = 'inline-block';
-            } else {
-                document.getElementById('downloadBtnQuote').style.display = 'inline-block';
-                document.getElementById('newQuoteBtn').style.display = 'inline-block';
+            document.getElementById(`downloadBtn${typeCapitalized}`).style.display = 'inline-block';
+            document.getElementById(`new${typeCapitalized}Btn`).style.display = 'inline-block';
+            
+            // Mostrar bot√≥n de convertir a factura solo si es una cotizaci√≥n
+            if (type === 'quote') {
                 document.getElementById('convertBtnQuote').style.display = 'inline-block';
-            }
-
-            // --- Enviar datos a Google Sheets ---
-            const dataToSend = {
-                action: type === 'invoice' ? 'saveInvoice' : 'saveQuote',
-                data: {
-                    documentNumber: documentNumber,
-                    clientName: clientName,
-                    clientAddress: clientAddress,
-                    clientPhone: clientPhone,
-                    issueDate: issueDate,
-                    dueDate: type === 'invoice' ? dueDate : '', // Solo si es factura
-                    validityDays: type === 'quote' ? (parseInt(document.getElementById('validityDays').value) || 10) : '', // Solo si es cotización
-                    totalAmount: totalAmount
-                }
-            };
-
-            try {
-                const response = await fetch(GOOGLE_SHEETS_WEB_APP_URL, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(dataToSend)
-                });
-
-                const result = await response.json();
-                if (result.status === 'success') {
-                    console.log('Datos guardados en Google Sheets:', result.message);
-                    alert(`¡${typeCapitalized} generada y guardada en Google Sheets con éxito!`);
-                } else {
-                    console.error('Error al guardar en Google Sheets:', result.message);
-                    alert(`Error al guardar ${type} en Google Sheets: ${result.message}\nConsulte la consola del navegador para más detalles.`);
-                }
-            } catch (error) {
-                console.error('Error de conexión con Google Sheets:', error);
-                alert(`Error de conexión: No se pudo guardar ${type} en Google Sheets. Verifique su conexión o la URL del script.`);
+            } else {
+                document.getElementById('convertBtnQuote').style.display = 'none';
             }
         }
 
-        // Función para descargar el documento como PDF
-        async function downloadPDF(type) {
-            const { jsPDF } = window.jspdf;
+        // Funci√≥n para descargar PDF
+        function downloadPDF(type) {
             const element = document.getElementById('documentPreview');
-            const typeName = type === 'invoice' ? 'Factura' : 'Cotizacion';
-            const clientName = document.getElementById(`clientName${type.charAt(0).toUpperCase() + type.slice(1)}`).value.trim();
-            const documentNum = document.getElementById('documentNumber').textContent;
+            const docTitle = document.getElementById('documentTitle').textContent;
+            const docNumber = document.getElementById('documentNumber').textContent;
+            
+            // Esconder los botones antes de generar el PDF para que no aparezcan en la captura
+            const downloadBtn = document.getElementById(`downloadBtn${type.charAt(0).toUpperCase() + type.slice(1)}`);
+            const newBtn = document.getElementById(`new${type.charAt(0).toUpperCase() + type.slice(1)}Btn`);
+            const convertBtn = document.getElementById('convertBtnQuote');
 
-            const filename = `${typeName}_${clientName.replace(/[^a-zA-Z0-9]/g, '')}_${documentNum}.pdf`;
+            if (downloadBtn) downloadBtn.style.display = 'none';
+            if (newBtn) newBtn.style.display = 'none';
+            if (convertBtn) convertBtn.style.display = 'none';
 
-            // Ocultar elementos de los botones de acción y navegación para que no aparezcan en el PDF
-            const actionsDiv = document.querySelector('.actions');
-            const navTabs = document.querySelector('.nav-tabs');
-            const formSection = document.querySelector('.form-section');
-
-            const originalActionsDisplay = actionsDiv.style.display;
-            const originalNavTabsDisplay = navTabs.style.display;
-            const originalFormSectionDisplay = formSection.style.display;
-
-            actionsDiv.style.display = 'none';
-            navTabs.style.display = 'none';
-            formSection.style.display = 'none';
-
-            // Ajustar el ancho del preview para que quepa en un PDF estándar (A4)
-            const originalWidth = element.style.width;
-            const originalPadding = element.style.padding;
-            element.style.width = '794px'; // Ancho aproximado para A4 a 96dpi
-            element.style.padding = '30px'; 
-
-
-            try {
-                // Generar canvas del documento con mayor escala para mejor calidad en PDF
-                const canvas = await html2canvas(element, { scale: 2 }); 
+            html2canvas(element, { scale: 2, useCORS: true }).then(canvas => {
                 const imgData = canvas.toDataURL('image/png');
-                const pdf = new jsPDF('p', 'pt', 'a4'); // 'p' para vertical, 'pt' para puntos, tamaño A4
-                
-                const imgWidth = 595.28; // Ancho A4 en puntos
-                const pageHeight = 841.89; // Alto A4 en puntos
-                const imgHeight = (canvas.height * imgWidth) / canvas.width; // Calcular alto proporcional
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210; 
+                const pageHeight = 297; 
+                const imgHeight = canvas.height * imgWidth / canvas.width;
                 let heightLeft = imgHeight;
                 let position = 0;
 
                 pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
                 heightLeft -= pageHeight;
 
-                // Añadir páginas adicionales si el contenido es más largo que una página A4
                 while (heightLeft >= 0) {
                     position = heightLeft - imgHeight;
                     pdf.addPage();
                     pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
                     heightLeft -= pageHeight;
                 }
-                pdf.save(filename); // Guardar el PDF con el nombre generado
-            } catch (error) {
-                console.error("Error al generar el PDF:", error);
-                alert("Hubo un error al generar el PDF. Por favor, inténtelo de nuevo.");
-            } finally {
-                // Restaurar los estilos originales después de generar el PDF
-                actionsDiv.style.display = originalActionsDisplay;
-                navTabs.style.display = originalNavTabsDisplay;
-                formSection.style.display = originalFormSectionDisplay;
-                element.style.width = originalWidth; 
-                element.style.padding = originalPadding; 
-            }
+                pdf.save(`${docTitle.toLowerCase()}-${docNumber}.pdf`);
+
+                // Restaurar la visibilidad de los botones despu√©s de generar el PDF
+                if (downloadBtn) downloadBtn.style.display = 'inline-block';
+                if (newBtn) newBtn.style.display = 'inline-block';
+                if (type === 'quote' && convertBtn) convertBtn.style.display = 'inline-block';
+            });
         }
 
-        // Función para limpiar el formulario y preparar una nueva Factura/Cotización
+        // Funci√≥n para empezar un nuevo documento (borrar campos)
         function newDocument(type) {
             const typeCapitalized = type.charAt(0).toUpperCase() + type.slice(1);
+            
             document.getElementById(`clientName${typeCapitalized}`).value = '';
             document.getElementById(`clientAddress${typeCapitalized}`).value = '';
             document.getElementById(`clientPhone${typeCapitalized}`).value = '';
-            initializeDates(); // Restablecer fechas a hoy y 30 días después
-            
+            document.getElementById(`notes${typeCapitalized}`).value = '';
+            document.getElementById(`terms${typeCapitalized}`).value = '';
             document.getElementById(`logoInput${typeCapitalized}`).value = '';
+            logoDataUrl[type] = null;
             document.getElementById(`logoPreview${typeCapitalized}`).style.display = 'none';
-            logoDataUrl[type] = null; // Reiniciar data URL del logo
+            document.getElementById(`logoPreview${typeCapitalized}`).src = '';
 
+            // Reset services
             const servicesContainer = document.getElementById(`servicesContainer${typeCapitalized}`);
             servicesContainer.innerHTML = `
                 <div class="service-item">
-                    <input type="text" class="service-description" placeholder="Descripción del servicio">
+                    <input type="text" class="service-description" placeholder="Descripci√≥n del servicio">
                     <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0">
                     <button class="btn btn-danger" onclick="removeService(this, '${type}')">Eliminar</button>
                 </div>
             `;
-            // Re-adjuntar event listener para el nuevo item de servicio
+            // Add event listener for the newly added service item
             servicesContainer.querySelector('.service-price').addEventListener('input', () => calculateTotal(type));
 
-            calculateTotal(type); // Recalcular a 0.00
-            
-            // Ocultar previsualización y botones de acción
+            calculateTotal(type); // Reset total
+            initializeDates(); // Reset dates
+
             document.getElementById('documentPreview').style.display = 'none';
             document.getElementById(`downloadBtn${typeCapitalized}`).style.display = 'none';
             document.getElementById(`new${typeCapitalized}Btn`).style.display = 'none';
@@ -999,92 +938,70 @@ Created on Fri Jul  4 01:17:55 2025
             }
         }
 
-        // Función para convertir una cotización a factura
+        // Funci√≥n para convertir cotizaci√≥n a factura
         function convertToInvoice() {
-            // Recuperar datos de la cotización actual
-            const clientName = document.getElementById('clientNameQuote').value;
-            const clientAddress = document.getElementById('clientAddressQuote').value;
-            const clientPhone = document.getElementById('clientPhoneQuote').value;
-            const issueDate = document.getElementById('issueDateQuote').value;
-            const services = []; // Se usa para pasar los datos de los servicios para la visualización
-            document.querySelectorAll('#servicesContainerQuote .service-item').forEach(item => {
-                services.push({
-                    description: item.querySelector('.service-description').value,
-                    price: parseFloat(item.querySelector('.service-price').value) || 0
-                });
-            });
-            const logo = logoDataUrl['quote'];
+            // Transferir datos de cotizaci√≥n a factura
+            document.getElementById('clientNameInvoice').value = document.getElementById('clientNameQuote').value;
+            document.getElementById('clientAddressInvoice').value = document.getElementById('clientAddressQuote').value;
+            document.getElementById('clientPhoneInvoice').value = document.getElementById('clientPhoneQuote').value;
+            document.getElementById('issueDateInvoice').value = document.getElementById('issueDateQuote').value;
+            // La fecha de vencimiento de la factura se establecer√° por defecto al cambiar a factura o se puede calcular
+            initializeDates(); // Recalcular fecha de vencimiento para la factura
 
-            // Cambiar a la pestaña de factura
-            switchTab('invoice');
+            document.getElementById('notesInvoice').value = document.getElementById('notesQuote').value;
+            document.getElementById('termsInvoice').value = document.getElementById('termsQuote').value;
 
-            // Llenar los campos de la factura con los datos de la cotización
-            document.getElementById('clientNameInvoice').value = clientName;
-            document.getElementById('clientAddressInvoice').value = clientAddress;
-            document.getElementById('clientPhoneInvoice').value = clientPhone;
-            document.getElementById('issueDateInvoice').value = issueDate;
-            
-            // Cargar logo si existe
-            if (logo) {
-                logoDataUrl['invoice'] = logo;
-                document.getElementById('logoPreviewInvoice').src = logo;
+            // Transferir logo
+            logoDataUrl['invoice'] = logoDataUrl['quote'];
+            document.getElementById('logoPreviewInvoice').src = logoDataUrl['invoice'];
+            if (logoDataUrl['invoice']) {
                 document.getElementById('logoPreviewInvoice').style.display = 'block';
             } else {
                 document.getElementById('logoPreviewInvoice').style.display = 'none';
-                logoDataUrl['invoice'] = null;
             }
-
-            // Llenar servicios en la sección de factura
+            
+            // Transferir servicios
             const servicesContainerInvoice = document.getElementById('servicesContainerInvoice');
-            servicesContainerInvoice.innerHTML = ''; // Limpiar servicios existentes
-            services.forEach(service => {
+            servicesContainerInvoice.innerHTML = '';
+            document.querySelectorAll('#servicesContainerQuote .service-item').forEach(item => {
+                const description = item.querySelector('.service-description').value;
+                const price = item.querySelector('.service-price').value;
+                
                 const serviceItem = document.createElement('div');
                 serviceItem.className = 'service-item';
                 serviceItem.innerHTML = `
-                    <input type="text" class="service-description" placeholder="Descripción del servicio" value="${service.description}">
-                    <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0" value="${service.price.toFixed(2)}">
+                    <input type="text" class="service-description" placeholder="Descripci√≥n del servicio" value="${description}">
+                    <input type="number" class="service-price" placeholder="0.00" step="0.01" min="0" value="${price}">
                     <button class="btn btn-danger" onclick="removeService(this, 'invoice')">Eliminar</button>
                 `;
                 servicesContainerInvoice.appendChild(serviceItem);
-                // Adjuntar listener para el nuevo campo de precio
                 serviceItem.querySelector('.service-price').addEventListener('input', () => calculateTotal('invoice'));
             });
-            calculateTotal('invoice'); // Recalcular el total de la factura
-            
-            // Ocultar botones de cotización después de la conversión
-            document.getElementById('downloadBtnQuote').style.display = 'none';
-            document.getElementById('newQuoteBtn').style.display = 'none';
-            document.getElementById('convertBtnQuote').style.display = 'none';
+            calculateTotal('invoice');
+
+            // Cambiar a la pesta√±a de factura y generar el documento
+            switchTab('invoice');
+            generateDocument('invoice');
         }
 
-        // Inicializar la aplicación cuando el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeDates(); // Establecer fechas predeterminadas
-            setupLogoHandler('invoice'); // Configurar carga de logo para factura
-            setupLogoHandler('quote');   // Configurar carga de logo para cotización
+        // Inicializar listeners y fechas al cargar la p√°gina
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeDates();
+            setupLogoHandler('invoice');
+            setupLogoHandler('quote');
 
-            // Adjuntar event listeners a los campos de precio existentes para calcular el total
+            // Add event listeners for initial service items for both tabs
             document.querySelectorAll('#servicesContainerInvoice .service-price').forEach(input => {
                 input.addEventListener('input', () => calculateTotal('invoice'));
             });
             document.querySelectorAll('#servicesContainerQuote .service-price').forEach(input => {
                 input.addEventListener('input', () => calculateTotal('quote'));
             });
-            calculateTotal('invoice'); // Calcular total inicial para factura
-            calculateTotal('quote');   // Calcular total inicial para cotización
 
-            // Adjuntar event listeners para formatear números de teléfono
-            const phoneInputInvoice = document.getElementById('clientPhoneInvoice');
-            phoneInputInvoice.addEventListener('input', function() {
-                formatPhoneNumber(this);
-            });
-
-            const phoneInputQuote = document.getElementById('clientPhoneQuote');
-            phoneInputQuote.addEventListener('input', function() {
-                formatPhoneNumber(this);
-            });
+            // Calculate initial totals
+            calculateTotal('invoice');
+            calculateTotal('quote');
         });
-
     </script>
 </body>
 </html>
